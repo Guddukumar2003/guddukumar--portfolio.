@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { Background, BackToTop } from "@/components/site/Shared";
 
 function NotFoundComponent() {
   return (
@@ -118,8 +121,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="relative min-h-screen bg-background text-foreground">
+        <Background />
+        <Nav />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+        <BackToTop />
+      </div>
     </QueryClientProvider>
   );
 }
