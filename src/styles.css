@@ -38,23 +38,23 @@
   --radius: 0.875rem;
   --lime: #95D521;
   --sky: #2D9ED8;
-  --background: #05070A;
-  --foreground: #F5F7FA;
-  --card: rgba(255, 255, 255, 0.04);
-  --card-foreground: #F5F7FA;
-  --popover: #0B0F14;
-  --popover-foreground: #F5F7FA;
+  --background: #FFFFFF;
+  --foreground: #0B1220;
+  --card: #FFFFFF;
+  --card-foreground: #0B1220;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B1220;
   --primary: #95D521;
-  --primary-foreground: #05070A;
+  --primary-foreground: #0B1220;
   --secondary: #2D9ED8;
-  --secondary-foreground: #05070A;
-  --muted: rgba(255,255,255,0.06);
-  --muted-foreground: rgba(245,247,250,0.65);
-  --accent: #2D9ED8;
-  --accent-foreground: #05070A;
-  --destructive: oklch(0.65 0.22 25);
-  --border: rgba(255,255,255,0.08);
-  --input: rgba(255,255,255,0.08);
+  --secondary-foreground: #FFFFFF;
+  --muted: #F4F7FB;
+  --muted-foreground: #5A6473;
+  --accent: #EAF7FF;
+  --accent-foreground: #0B1220;
+  --destructive: oklch(0.6 0.22 25);
+  --border: #E6ECF2;
+  --input: #E6ECF2;
   --ring: #95D521;
 }
 
@@ -68,19 +68,25 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  ::selection { background: var(--lime); color: #05070A; }
+  ::selection { background: var(--lime); color: #0B1220; }
 }
 
 @utility glass {
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 10px 40px -12px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.75);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px -18px rgba(15, 42, 76, 0.15), 0 1px 0 rgba(255,255,255,0.6) inset;
+}
+
+@utility soft-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px -20px rgba(15, 42, 76, 0.18);
 }
 
 @utility text-gradient {
-  background: linear-gradient(90deg, var(--lime), var(--sky));
+  background: linear-gradient(90deg, var(--sky), var(--lime));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -90,11 +96,18 @@
   background: linear-gradient(135deg, var(--lime), var(--sky));
 }
 
-@utility ring-glow {
-  box-shadow:
-    0 0 0 1px rgba(149,213,33,0.4),
-    0 0 40px rgba(149,213,33,0.35),
-    0 0 80px rgba(45,158,216,0.25);
+@utility btn-lime {
+  background: var(--lime);
+  color: #0B1220;
+  border: 1px solid color-mix(in oklab, var(--lime) 70%, black 6%);
+  box-shadow: 0 8px 24px -12px color-mix(in oklab, var(--lime) 70%, transparent);
+}
+
+@utility btn-sky {
+  background: var(--sky);
+  color: #FFFFFF;
+  border: 1px solid color-mix(in oklab, var(--sky) 70%, black 6%);
+  box-shadow: 0 8px 24px -12px color-mix(in oklab, var(--sky) 70%, transparent);
 }
 
 @keyframes blob {
@@ -104,7 +117,6 @@
 }
 @keyframes spin-slow { to { transform: rotate(360deg); } }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-@keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
 
 @utility animate-blob { animation: blob 14s ease-in-out infinite; }
 @utility animate-spin-slow { animation: spin-slow 8s linear infinite; }
