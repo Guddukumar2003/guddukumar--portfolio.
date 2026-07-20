@@ -3,6 +3,8 @@ import {
   Github, Linkedin, Twitter, Mail, Download, ArrowRight,
   Code2, Palette, Rocket, Sparkles, Layers, Cpu,
   Star, Quote, CheckCircle2, Zap, Trophy, Users,
+  Briefcase, Award, BookOpen, HelpCircle, Send, Calendar,
+  Coffee, Music, Camera, Plane,
 } from "lucide-react";
 import { SectionHeader } from "@/components/site/Shared";
 
