@@ -3,6 +3,8 @@ import {
   Github, Linkedin, Twitter, Mail, Download, ArrowRight,
   Code2, Palette, Rocket, Sparkles, Layers, Cpu,
   Star, Quote, CheckCircle2, Zap, Trophy, Users,
+  Briefcase, Award, BookOpen, HelpCircle, Send, Calendar,
+  Coffee, Music, Camera, Plane,
 } from "lucide-react";
 import { SectionHeader } from "@/components/site/Shared";
 
@@ -285,6 +287,197 @@ function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* EXPERIENCE TIMELINE */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-5xl">
+          <SectionHeader eyebrow="Journey" title="Career highlights" sub="A quick look at the roles that shaped my craft." />
+          <ol className="relative border-l-2 border-dashed border-border pl-8">
+            {[
+              { r: "Senior Full Stack Engineer", c: "Nova Labs", d: "2023 — Present", p: "Leading a team of 4 shipping the flagship analytics product." },
+              { r: "Product Engineer", c: "Orbit AI", d: "2021 — 2023", p: "Built the AI canvas from prototype to 50k monthly users." },
+              { r: "Frontend Developer", c: "Fleetly", d: "2019 — 2021", p: "Rewrote the driver app with React and cut load time by 60%." },
+              { r: "Freelance Developer", c: "Independent", d: "2018 — 2019", p: "Shipped 20+ client sites across e-commerce and SaaS." },
+            ].map((e, i) => (
+              <li key={e.c} className="relative mb-8 last:mb-0">
+                <span className={`absolute -left-[41px] top-1 grid h-6 w-6 place-items-center rounded-full ring-4 ring-background ${i % 2 ? "btn-sky" : "btn-lime"}`}>
+                  <Briefcase className="h-3 w-3" />
+                </span>
+                <div className="soft-card rounded-2xl p-5">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h3 className="text-base font-bold text-foreground">{e.r}</h3>
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-sky">
+                      <Calendar className="h-3 w-3" /> {e.d}
+                    </span>
+                  </div>
+                  <div className="text-sm font-medium text-lime">{e.c}</div>
+                  <p className="mt-2 text-sm text-muted-foreground">{e.p}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-8 text-center">
+            <Link to="/experience" className="inline-flex items-center gap-1 text-sm font-semibold text-sky hover:text-lime">
+              See full experience <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CERTIFICATIONS */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader eyebrow="Certifications" title="Validated & credentialed" sub="Recent certifications from industry-recognized programs." />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { t: "AWS Solutions Architect", i: "Amazon Web Services", d: "2024" },
+              { t: "Meta Frontend Developer", i: "Meta / Coursera", d: "2023" },
+              { t: "Google UX Design", i: "Google", d: "2023" },
+              { t: "MongoDB Developer", i: "MongoDB University", d: "2022" },
+              { t: "TensorFlow Developer", i: "DeepLearning.AI", d: "2022" },
+              { t: "Scrum Master (PSM I)", i: "Scrum.org", d: "2021" },
+            ].map((c, i) => (
+              <div key={c.t} className="soft-card group flex items-start gap-4 rounded-3xl p-6 transition hover:-translate-y-1">
+                <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl ${i % 2 ? "btn-sky" : "btn-lime"}`}>
+                  <Award className="h-5 w-5" />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="truncate text-base font-bold text-foreground">{c.t}</h3>
+                  <p className="text-xs text-muted-foreground">{c.i} · {c.d}</p>
+                  <a href="#" className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-sky hover:text-lime">
+                    Verify <ArrowRight className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LATEST BLOG */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky">Writing</p>
+              <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
+                <span className="text-gradient">From the Blog</span>
+              </h2>
+            </div>
+            <Link to="/blog" className="group inline-flex items-center gap-1 text-sm font-semibold text-foreground hover:text-sky">
+              All posts <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+            </Link>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              { t: "Designing for AI-first interfaces", c: "Design", d: "Aug 12, 2026", r: "6 min read" },
+              { t: "Scaling Next.js on the edge", c: "Engineering", d: "Jul 04, 2026", r: "8 min read" },
+              { t: "The art of tiny microinteractions", c: "Craft", d: "Jun 18, 2026", r: "4 min read" },
+            ].map((b, i) => (
+              <article key={b.t} className="soft-card group overflow-hidden rounded-3xl transition hover:-translate-y-1">
+                <div className={`h-40 ${i % 2 ? "bg-gradient-brand" : "bg-[radial-gradient(circle_at_30%_20%,rgba(45,158,216,0.35),transparent_60%),radial-gradient(circle_at_70%_80%,rgba(149,213,33,0.35),transparent_60%)]"}`} />
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-xs">
+                    <span className={`rounded-full px-2 py-0.5 font-semibold ${i % 2 ? "bg-sky/10 text-sky" : "bg-lime/15 text-foreground"}`}>{b.c}</span>
+                    <span className="text-muted-foreground">{b.d} · {b.r}</span>
+                  </div>
+                  <h3 className="mt-3 text-lg font-bold text-foreground group-hover:text-sky">{b.t}</h3>
+                  <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-sky">
+                    Read post <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BEYOND WORK */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader eyebrow="Beyond Code" title="A few things I love" sub="Life outside the editor is where the best ideas come from." />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Coffee, t: "Coffee", d: "Third-wave espresso and slow pour-overs." },
+              { icon: Music, t: "Music", d: "Lo-fi beats and classical piano playlists." },
+              { icon: Camera, t: "Photography", d: "Street and travel photography on the weekends." },
+              { icon: Plane, t: "Travel", d: "Exploring new cultures — 14 countries so far." },
+            ].map((h, i) => (
+              <div key={h.t} className="soft-card rounded-3xl p-6 text-center transition hover:-translate-y-1">
+                <span className={`mx-auto grid h-12 w-12 place-items-center rounded-2xl ${i % 2 ? "btn-sky" : "btn-lime"}`}>
+                  <h.icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-4 font-bold text-foreground">{h.t}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{h.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-4xl">
+          <SectionHeader eyebrow="FAQ" title="Frequently asked" sub="Quick answers to what most people ask before we start." />
+          <div className="space-y-4">
+            {[
+              { q: "What kind of projects do you take on?", a: "Product-led websites, SaaS dashboards, AI-powered tools, and design-heavy marketing sites." },
+              { q: "How do you charge?", a: "Fixed-price for scoped projects, or a weekly retainer for ongoing partnerships. Estimates are always upfront." },
+              { q: "Do you work with existing teams?", a: "Yes — I regularly embed with product and design teams as a senior engineer or design partner." },
+              { q: "What's your typical timeline?", a: "Landing pages ship in 1–2 weeks, MVPs in 4–8 weeks, larger platforms in 3+ months." },
+              { q: "Do you offer post-launch support?", a: "Absolutely. Every project includes a 30-day warranty and optional monthly maintenance." },
+            ].map((f, i) => (
+              <details key={f.q} className="soft-card group rounded-2xl p-5 open:shadow-lg">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+                  <span className="flex items-center gap-3 text-sm font-bold text-foreground">
+                    <HelpCircle className={`h-4 w-4 ${i % 2 ? "text-sky" : "text-lime"}`} />
+                    {f.q}
+                  </span>
+                  <span className="grid h-7 w-7 place-items-center rounded-full bg-muted text-lg font-bold text-muted-foreground transition group-open:rotate-45 group-open:btn-lime">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 pl-7 text-sm text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NEWSLETTER */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-4xl">
+          <div className="soft-card relative overflow-hidden rounded-[2rem] bg-muted/40 p-10 sm:p-12">
+            <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-lime/25 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-sky/25 blur-3xl" />
+            <div className="relative grid gap-8 md:grid-cols-2 md:items-center">
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-sky">
+                  <BookOpen className="h-3.5 w-3.5" /> Monthly Newsletter
+                </span>
+                <h2 className="mt-4 text-2xl font-extrabold sm:text-3xl">
+                  Notes on <span className="text-gradient">design, code & AI</span>
+                </h2>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  One curated email a month. No spam. Unsubscribe anytime.
+                </p>
+              </div>
+              <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-3 sm:flex-row">
+                <input
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm outline-none transition focus:border-sky focus:ring-2 focus:ring-sky/20"
+                />
+                <button type="submit" className="btn-lime inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition hover:scale-[1.02]">
+                  Subscribe <Send className="h-4 w-4" />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
