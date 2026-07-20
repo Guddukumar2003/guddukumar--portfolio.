@@ -5,10 +5,18 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-rea
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Rohit" },
-      { name: "description", content: "Get in touch with Rohit for freelance projects, collaborations, or a quick hello." },
-      { property: "og:title", content: "Contact — Rohit" },
-      { property: "og:description", content: "Get in touch with Rohit for freelance projects, collaborations, or a quick hello." },
+      { title: "Contact — Guddu Kumar" },
+      {
+        name: "description",
+        content:
+          "Get in touch with Guddu Kumar for freelance projects, collaborations, or a quick hello.",
+      },
+      { property: "og:title", content: "Contact — Guddu Kumar" },
+      {
+        property: "og:description",
+        content:
+          "Get in touch with Guddu Kumar for freelance projects, collaborations, or a quick hello.",
+      },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -32,13 +40,17 @@ function ContactPage() {
   return (
     <PageShell>
       <div className="mx-auto max-w-6xl">
-        <SectionHeader eyebrow="Contact" title="Let's Build Something" sub="Have a project in mind? Drop a message — I usually reply within a day." />
+        <SectionHeader
+          eyebrow="Contact"
+          title="Let's Build Something"
+          sub="Have a project in mind? Drop a message — I usually reply within a day."
+        />
         <div className="grid gap-6 lg:grid-cols-5">
           <div className="soft-card rounded-3xl p-8 lg:col-span-2">
             <h2 className="text-lg font-bold text-gradient">Get in touch</h2>
             <div className="mt-6 space-y-4 text-sm">
               {[
-                { Icon: Mail, l: "hello@rohit.dev", cls: "btn-lime" },
+                { Icon: Mail, l: "hello@Guddu Kumar.dev", cls: "btn-lime" },
                 { Icon: Phone, l: "+91 98765 43210", cls: "btn-sky" },
                 { Icon: MapPin, l: "Bengaluru, India", cls: "btn-lime" },
               ].map(({ Icon, l, cls }) => (
@@ -52,7 +64,11 @@ function ContactPage() {
             </div>
             <div className="mt-8 flex gap-2">
               {[Github, Linkedin, Twitter, Mail].map((Icon, i) => (
-                <a key={i} href="#" className="soft-card grid h-10 w-10 place-items-center rounded-xl transition hover:text-sky">
+                <a
+                  key={i}
+                  href="#"
+                  className="soft-card grid h-10 w-10 place-items-center rounded-xl transition hover:text-sky"
+                >
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
