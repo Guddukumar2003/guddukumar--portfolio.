@@ -117,7 +117,39 @@
 }
 @keyframes spin-slow { to { transform: rotate(360deg); } }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+@keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--lime) 45%, transparent);} 70% { box-shadow: 0 0 0 18px transparent;} 100% { box-shadow: 0 0 0 0 transparent;} }
+@keyframes gradient-x { 0%,100% { background-position: 0% 50%;} 50% { background-position: 100% 50%;} }
 
 @utility animate-blob { animation: blob 14s ease-in-out infinite; }
 @utility animate-spin-slow { animation: spin-slow 8s linear infinite; }
 @utility animate-float { animation: float 6s ease-in-out infinite; }
+@utility animate-marquee { animation: marquee 30s linear infinite; }
+@utility animate-pulse-ring { animation: pulse-ring 2.4s cubic-bezier(0.4,0,0.6,1) infinite; }
+@utility animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 8s ease infinite;
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--sky) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--sky) 12%, transparent) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+
+@utility bg-dots {
+  background-image: radial-gradient(color-mix(in oklab, var(--sky) 30%, transparent) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+@utility shimmer-text {
+  background: linear-gradient(90deg, var(--sky) 0%, var(--lime) 40%, var(--sky) 80%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
