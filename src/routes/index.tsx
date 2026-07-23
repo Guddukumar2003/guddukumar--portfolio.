@@ -157,7 +157,7 @@ function Home() {
               Available for freelance work
             </div>
             <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              Hi, I'm <span className="text-gradient">Guddu Kumar</span>
+              Hi, I'm <br /> <span className="text-gradient">Guddu Kumar</span>
             </h1>
             <p className="mt-4 text-lg font-medium text-foreground/80">
               Full Stack Developer <span className="text-lime">•</span> UI/UX Designer{" "}

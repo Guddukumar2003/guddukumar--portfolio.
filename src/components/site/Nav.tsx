@@ -19,8 +19,8 @@ export function Nav() {
       <div className="mx-auto mt-4 max-w-6xl px-4">
         <div className="glass flex items-center justify-between rounded-2xl px-4 py-3">
           <Link to="/" className="flex items-center gap-2 font-bold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-brand text-[#0B1220]">
-              R
+            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-brand text-white">
+              #
             </span>
             <span className="text-gradient text-lg">Guddu Kumar</span>
           </Link>
@@ -39,7 +39,7 @@ export function Nav() {
           </nav>
           <Link
             to="/contact"
-            className="btn-lime hidden rounded-xl px-4 py-2 text-sm font-semibold transition hover:opacity-90 md:inline-flex"
+            className="btn-lime hidden rounded-xl px-8 py-2 text-sm font-semibold transition hover:opacity-90 md:inline-flex"
           >
             Hire Me
           </Link>
