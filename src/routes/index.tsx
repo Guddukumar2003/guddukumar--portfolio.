@@ -30,6 +30,13 @@ import {
   Plane,
 } from "lucide-react";
 import { SectionHeader } from "@/components/site/Shared";
+import {
+  BentoShowcase,
+  Packages,
+  GithubActivity,
+  Awards,
+  BigTestimonial,
+} from "@/components/site/HomeSections";
 
 export const Route = createFileRoute("/")({
   head: () => ({
