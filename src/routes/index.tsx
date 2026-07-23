@@ -701,6 +701,21 @@ function Home() {
         </div>
       </section>
 
+      {/* BENTO */}
+      <BentoShowcase />
+
+      {/* BIG TESTIMONIAL */}
+      <BigTestimonial />
+
+      {/* PACKAGES */}
+      <Packages />
+
+      {/* GITHUB ACTIVITY */}
+      <GithubActivity />
+
+      {/* AWARDS */}
+      <Awards />
+
       {/* NEWSLETTER */}
       <section className="px-4 py-20">
         <div className="mx-auto max-w-4xl">
